@@ -1,15 +1,19 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import "./globals.css";
+import { ReactNode } from 'react';
 
 export const metadata = {
   title: 'Template',
   description: "Welcome to Beqa Tvildiani's personal Template",
 };
 
+interface AppProps {
+  children: ReactNode;
+}
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ children }: AppProps) {
   return (
-    <>
+    <html lang="en">
+      <body>
       {/* Shared Navbar (if needed) */}
       <nav className="bg-gray-800 p-4">
         <ul className="container mx-auto flex gap-1 items-center">
@@ -22,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       {/* Main Content */}
       <main className="bg-gray-900 min-h-[85vh]">
-        <Component {...pageProps} />
+        {children}
       </main>
 
       {/* Footer */}
@@ -31,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <p>&copy; chxikvia.tech | Design by <a href="https://github.com/BEQSONA-cmd" className="text-blue-400">BEQSONA-cmd</a></p>
         </div>
       </footer>
-    </>
+      </body>
+    </html>
   );
 }
