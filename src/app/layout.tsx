@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ReactNode } from 'react';
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: 'Template',
@@ -35,6 +36,7 @@ export default function App({ children }: AppProps) {
           <p>&copy; chxikvia.tech | Design by <a href="https://github.com/BEQSONA-cmd" className="text-blue-400">BEQSONA-cmd</a></p>
         </div>
       </footer>
+      <ToastContainer />
       </body>
     </html>
   );
